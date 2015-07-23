@@ -64,6 +64,7 @@ void MinCut::readInput() {
             adjList[nd].insert(neighbor);
         }
     }
+    numNodes = adjList.size();
 }
 
 int MinCut::numIterations() {
