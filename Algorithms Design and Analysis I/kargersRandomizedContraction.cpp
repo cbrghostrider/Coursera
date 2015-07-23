@@ -112,7 +112,7 @@ int MinCut::mincutVal() {
         //going to merge chosen.second into chosen.first
         //and adjust adjacency lists of everyone affected
         for (const int& nd : myAdjList[chosen.second]) {
-            myAdjList[nd].erase(chosen.second);
+            myAdjList[nd].erase(myAdjList[nd].find(chosen.second));
             myAdjList[nd].insert(chosen.first);
             myAdjList[chosen.first].insert(nd);
         }
