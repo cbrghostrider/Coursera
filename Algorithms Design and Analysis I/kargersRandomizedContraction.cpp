@@ -71,6 +71,14 @@ int MinCut::numIterations() {
     return (numNodes * numNodes * (std::log(numNodes))); 
 }
 
+// Caution!!
+// Karger's Algorithm requires choosing one edge uniformly at random. 
+// However, I first choose a node uniformly at random, and 
+// then choose an edge for that node uniformly at random
+// (I did this so I could keep just one adjList and no other data structure)
+//
+// Due to this, I am most likely NOT choosing an overall edge uniformly at random. 
+// Algorithm still works fine though.
 Edge MinCut::pickEdge(const unordered_map<Node, Bucket>& myAdjList) {
     //pick node
     assert(myAdjList.size() > 0);
