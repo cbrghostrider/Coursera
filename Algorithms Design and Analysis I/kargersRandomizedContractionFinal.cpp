@@ -21,6 +21,7 @@
 #include <stdlib.h>
 #include <assert.h>
 #include <limits>
+#include <time.h>
 
 using std::pair;
 using std::make_pair;
@@ -50,6 +51,7 @@ private:
 
 MinCut::MinCut()
 : numNodes(0), totalEdges(0), adjList() {
+    srand(time(NULL));
     readInput();
 }
 
